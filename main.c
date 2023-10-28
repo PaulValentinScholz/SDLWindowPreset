@@ -25,7 +25,7 @@ bool initialize_window(){
     }
 
     window = SDL_CreateWindow(
-        "Physics Engine",
+        "My Window",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         WINDOW_WIDTH,
@@ -71,7 +71,7 @@ void process_input(){
             exit_app = true;
             break;
         case SDL_KEYDOWN:
-            if(event.key.keysym.sym = SDLK_ESCAPE){
+            if(event.key.keysym.sym == SDLK_ESCAPE){
                 exit_app = true;
                 break;
             }
