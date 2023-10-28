@@ -64,20 +64,20 @@ bool initialize_window(){
 // Process the users' input
 void process_input(){
     SDL_Event event;
-    SDL_PollEvent(&event);
-
-    switch(event.type){
-        case SDL_QUIT:
-            exit_app = true;
-            break;
-        case SDL_KEYDOWN:
-            if(event.key.keysym.sym == SDLK_ESCAPE){
+    while(SDL_PollEvent(&event)){
+        switch(event.type){
+            case SDL_QUIT:
                 exit_app = true;
                 break;
-            }
-            break;
-        case SDL_KEYUP:
-            break;
+            case SDL_KEYDOWN:
+                if(event.key.keysym.sym == SDLK_ESCAPE){
+                    exit_app = true;
+                    break;
+                }
+                break;
+            case SDL_KEYUP:
+                break;
+        }
     }
 }
 
